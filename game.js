@@ -5,33 +5,72 @@
 // also, record a win
 // create the following vars : wins, losses, guessLeft, guessesSoFar, userGuess, computerGuess.
 
-
-
-var my_array = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var ri = Math.floor(Math.random() * my_array.length);
-document.write(my_array[ri]);
-
-var wins = ""
-var losses = ""
-var guessesLeft = ""
-var userGuess = document.getElementById()
-
-
-var wins = ""
-var losses = ""
-var guessesLeft = ""
-var userGuess = document.getElementById()
-
+//set the array of letters for evaluation. 
 
 var my_array = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var ri = Math.floor(Math.random() * my_array.length);
-document.write(my_array[ri]);
 
+//set the variables to be used. 
 
-//  now let's get the loop built in order to create the random number. 
+var wins = 0;
+var losses = 0;
+var guessesLeft = 10;
+var guessedLetter = [];
+var computerGuess = null;
 
-var i;
+//this sets the value of guessesLeft into the DOM ID of "guesses-so-far".
+var guesscount = function () {
+    document.querySelector("#guesses-so-far").innerHTML = guessesLeft;
+};
 
-for (i = 0; i < letters.length; i++) {
+//this sets the random computer guessed letter. 
+var guessedLetterUpdate = function () {
+    computerGuess = my_array[Math.floor(Math.random() * my_array.length)];
+};
 
-}
+//this sends the number of guesses by user to the DOM ID of "your-guesses-so-far".
+var guessedSoFarUpdate = function () {
+    document.querySelector("#your-guesses-so-far").innerHTML = guessedLetter.join(", ");
+};
+
+//this resets the game. 
+var reset = function () {
+    guessesLeft = 9;
+    guessedLetter = [];
+    guesscount();
+    guessedSoFarUpdate();
+};
+
+//these are the functions to capture the times user has guessed, updates how many guesses
+//the user has left, and captures each letter guessed. 
+guesscount();
+guessedSoFarUpdate();
+guessedLetterUpdate();
+
+//this captures the actual letter keyed into the computer and converts any capitalized key
+//into a lower case key. 
+document.onkeyup = function (key) {
+    guessesLeft--;
+    var guessedLetter = String.fromCharCode(key.which).toLowerCase();
+
+//this appends the new letter to the end of the new user created array and sends it to be
+//evaluated against the computer guess. 
+    guessedLetter.push(computerGuess);
+    //computerGuess.push(guessedLetter);
+
+//this is the process for evaluating whether the user guess matches the random computer evaluation.
+//then it returns a win.
+    guesscount();
+    guessedSoFarUpdate();
+    if (computerGuess === guessedLetter) {
+        wins++;
+        document.querySelector("#wins").innerHTML = wins;
+        reset();
+    }
+
+//this adds does the same but for losses.
+    if (guessesLeft === 0) {
+        losses++;
+        document.querySelector("#losses").innerHTML = losses;
+        reset();
+    }
+};

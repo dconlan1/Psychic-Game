@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    
-  <script src="/assets/javascript/game.js"></script>
+
         <title>Psychic Game</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <!-- nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">CrazyPersonInc.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,30 +52,21 @@
             </form>
         </div>
     </nav>
+-->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
               
             <h1 class="display-4">Psychic Game</h1>
-            <p class="user-guess">Guess what letter I'm thinking of?
-            </p>
-            <prompt ID="ask-for-letter"></prompt>
-            <p ID="wins">Wins:</p>
-            <p ID="losses">Losses:</p>
-            <p ID="guesses-so-far">Guesses Left:</p>
-            <p ID="your-guesses-so-far">Your Guesses So Far:</p>
+            <p class="user-guess">Guess what letter I'm thinking of?</p>
+            <p>Wins: <span id="wins"></span>0</p>
+            <p>Losses: <span id="losses"></span>0</p>
+            <p>Guesses Left: <span id="guesses-so-far"></span></p>
+            <p>Your Guesses So Far: <span id="your-guesses-so-far"></span></p>
         </div>
     </div>
 
 <script>
 
-var my_array = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var ri = Math.floor(Math.random() * my_array.length);
-document.write(my_array[ri]);
-
-var wins = ""
-var losses = ""
-var guessesLeft = ""
-var userGuess = document.getElementById()
 
 
 
@@ -85,6 +76,9 @@ var userGuess = document.getElementById()
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <script src="assets/javascript/game.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
