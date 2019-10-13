@@ -29,3 +29,6 @@ click on: https://dconlan1.github.io/wordGuessGame/wordGuessGame/index.html
 
 Please [open an issue](https://github.com/fraction/dconlan/issues/new) for support.
 
+## Contributing
+
+I worked with Chris Ng and others in zoom sessions to collaborate in this project. 
