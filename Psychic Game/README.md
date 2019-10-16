@@ -11,7 +11,7 @@ Tbis is my second portfolio for the UC Berkeley Coding Program.
 
 ## Installation
 
-click on: https://dconlan1.github.io/wordGuessGame/wordGuessGame/index.html
+click on: https://dconlan1.github.io/psychicGame/index.html
 
 
 ## Usage:
